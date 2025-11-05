@@ -154,6 +154,118 @@ SkyWater 130nm Open-Source PDK Documentation.
 
 OpenLane and Yosys User Manuals.
 https://coertvonk.com/hw/building-math-circuits/faster-parameterized-multiplier-in-verilog-30774
+# verilog code for 4bit carry save multiplier(source)
+```
+// 4-bit Carry-Save Multiplier
+module carry_save_multiplier_4bit (
+    input  [3:0] A,
+    input  [3:0] B,
+    output [7:0] P
+);
+    wire [3:0] pp0, pp1, pp2, pp3;
+    wire [7:0] s1, s2, s3, c1, c2, c3;
+
+    // Partial Products
+    assign pp0 = A & {4{B[0]}};
+    assign pp1 = A & {4{B[1]}};
+    assign pp2 = A & {4{B[2]}};
+    assign pp3 = A & {4{B[3]}};
+
+    // Align partial products
+    assign s1 = {4'b0, pp0};
+    assign s2 = {3'b0, pp1, 1'b0};
+    assign s3 = {2'b0, pp2, 2'b0};
+    wire [7:0] pp4 = {1'b0, pp3, 3'b0};
+
+    // Stage 1: Carry-Save Additions
+    wire [7:0] sum1, carry1;
+    assign {carry1, sum1} = s1 + s2;
+
+    wire [7:0] sum2, carry2;
+    assign {carry2, sum2} = sum1 + s3;
+
+    wire [7:0] sum3, carry3;
+    assign {carry3, sum3} = sum2 + pp4;
+
+    // Final addition (carry propagate)
+    assign P = sum3 + carry3;
+
+endmodule
+```
+# verilog code for 4bit carry save multiplier(textbench)
+```
+`timescale 1ns / 1ps
+module tb_carry_save_multiplier_4bit;
+    reg [3:0] A, B;
+    wire [7:0] P;
+
+    carry_save_multiplier_4bit uut (.A(A), .B(B), .P(P));
+
+    initial begin
+        $monitor("Time=%0t A=%b B=%b -> P=%b (%d)", $time, A, B, P, P);
+        
+        A=4'b0011; B=4'b0101; #10;
+        A=4'b1111; B=4'b1111; #10;
+        A=4'b1010; B=4'b0110; #10;
+        A=4'b0001; B=4'b0010; #10;
+        A=4'b1000; B=4'b0011; #10;
+        $finish;
+    end
+endmodule
+```
+# verilog code for 4bit carry save multiplier(XDC constraints file)
+```
+## SWITCHES for Inputs A[3:0] and B[3:0]
+set_property PACKAGE_PIN F22 [get_ports {A[0]}] ; # SW0
+set_property IOSTANDARD LVCMOS33 [get_ports {A[0]}]
+
+set_property PACKAGE_PIN G22 [get_ports {A[1]}] ; # SW1
+set_property IOSTANDARD LVCMOS33 [get_ports {A[1]}]
+
+set_property PACKAGE_PIN H22 [get_ports {A[2]}] ; # SW2
+set_property IOSTANDARD LVCMOS33 [get_ports {A[2]}]
+
+set_property PACKAGE_PIN F21 [get_ports {A[3]}] ; # SW3
+set_property IOSTANDARD LVCMOS33 [get_ports {A[3]}]
+
+set_property PACKAGE_PIN H19 [get_ports {B[0]}] ; # SW4
+set_property IOSTANDARD LVCMOS33 [get_ports {B[0]}]
+
+set_property PACKAGE_PIN H18 [get_ports {B[1]}] ; # SW5
+set_property IOSTANDARD LVCMOS33 [get_ports {B[1]}]
+
+set_property PACKAGE_PIN H17 [get_ports {B[2]}] ; # SW6
+set_property IOSTANDARD LVCMOS33 [get_ports {B[2]}]
+
+set_property PACKAGE_PIN M15 [get_ports {B[3]}] ; # SW7
+set_property IOSTANDARD LVCMOS33 [get_ports {B[3]}]
+
+## LEDs for Product Output P[7:0]
+set_property PACKAGE_PIN T22 [get_ports {P[0]}] ; # LD0
+set_property IOSTANDARD LVCMOS33 [get_ports {P[0]}]
+
+set_property PACKAGE_PIN T21 [get_ports {P[1]}] ; # LD1
+set_property IOSTANDARD LVCMOS33 [get_ports {P[1]}]
+
+set_property PACKAGE_PIN U22 [get_ports {P[2]}] ; # LD2
+set_property IOSTANDARD LVCMOS33 [get_ports {P[2]}]
+
+set_property PACKAGE_PIN U21 [get_ports {P[3]}] ; # LD3
+set_property IOSTANDARD LVCMOS33 [get_ports {P[3]}]
+
+set_property PACKAGE_PIN V22 [get_ports {P[4]}] ; # LD4
+set_property IOSTANDARD LVCMOS33 [get_ports {P[4]}]
+
+set_property PACKAGE_PIN W22 [get_ports {P[5]}] ; # LD5
+set_property IOSTANDARD LVCMOS33 [get_ports {P[5]}]
+
+set_property PACKAGE_PIN U19 [get_ports {P[6]}] ; # LD6
+set_property IOSTANDARD LVCMOS33 [get_ports {P[6]}]
+
+set_property PACKAGE_PIN U14 [get_ports {P[7]}] ; # LD7
+set_property IOSTANDARD LVCMOS33 [get_ports {P[7]}]
+```
+
 
 FPGA Implementation Guide for Arithmetic Circuits.
 
