@@ -166,7 +166,7 @@ assigned to inputs A[3:0] and B[3:0], and LEDs were connected to output P[7:0].
 Figure 1: RTL Schematic of the Multiplier Design
 Schematic Diagram
 
-The schematic of the 4-bit Carry-Save Multiplier shows the interconnection of AND gates and full adders that generate and combine the partial products.
+#The schematic of the 4-bit Carry-Save Multiplier shows the interconnection of AND gates and full adders that generate and combine the partial products.
 Each bit of the multiplicand and multiplier contributes to the partial product, which is then added using Carry-Save Adders (CSAs).
 This arrangement eliminates the need for immediate carry propagation, improving the overall computation speed.
 The schematic confirms that the design structure follows the modular approach with minimal delay and reduced logic complexity.
@@ -179,7 +179,7 @@ Figure 2: Simulation Waveform
 ![WhatsApp Image 2025-10-30 at 13 09 50_1bc1dca4](https://github.com/user-attachments/assets/3d46f834-b415-4b6e-9f7a-817069be67c7)
 Simulation Waveform
 
-The simulation waveform illustrates the working of the CSM when various input combinations are applied.
+#The simulation waveform illustrates the working of the CSM when various input combinations are applied.
 Inputs A and B (each 4-bit) are given, and the product P (8-bit) is observed at the output.
 For every change in input, the output corresponds exactly to the expected product value, confirming the correctness of the Verilog code.
 The waveform validates the parallel carry-save addition technique, showing reduced delay compared to conventional multiplication methods.
@@ -189,16 +189,16 @@ The waveform validates the parallel carry-save addition technique, showing reduc
 ![WhatsApp Image 2025-11-02 at 23 04 11_93eb470e](https://github.com/user-attachments/assets/3021c0c4-ff87-4fb6-af9d-84408ae3de3c)
 
 Figure 3: FPGA Implementation Output on Hardware
-Hardware Implementation
+#Hardware Implementation
 
-The hardware implementation was carried out on an FPGA board.
+#The hardware implementation was carried out on an FPGA board.
 The Verilog code was synthesized using Xilinx Vivado, and the bitstream was loaded onto the FPGA.
 Switches were used to provide the 4-bit inputs for A and B, while LEDs displayed the 8-bit output product.
 When tested practically, the FPGA output matched the simulated results, confirming the successful working of the 4-bit Carry-Save Multiplier in real-time hardware.
 This validates the design’s efficiency, accuracy, and suitability for high-speed arithmetic operations.
 Example Calculation
 
-To verify the functionality of the Carry-Save Multiplier, the following example was tested:
+#To verify the functionality of the Carry-Save Multiplier, the following example was tested:
 
 Input	Binary Value	Decimal Value
 A	1010	10
@@ -208,10 +208,10 @@ Expected Output:
 Product = A × B = 10 × 5 = 50
 Binary Output = 0011 0010
 
-Simulation Output:
+#Simulation Output:
 Observed Binary Output = 0011 0010 ✅
 Hence, the Carry-Save Multiplier provides the correct 8-bit product output, confirming the design’s accuracy.
-Result Summary
+#Result Summary
 
 The Carry-Save Multiplier achieved a higher operating frequency with reduced delay due to the elimination of carry propagation at intermediate stages.
 
