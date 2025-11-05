@@ -68,55 +68,11 @@ Lower dynamic power because fewer transitions occur in intermediate adders.
 Better suitability for complex systems like MAC units and DSP blocks.
 
 # 🔄 Complete ASIC / FPGA Design Flow
-┌────────────────────────────────────────────┐
-│               SPECIFICATION                │
-│        (4-Bit Carry Save Multiplier)       │
-└────────────────────────┬───────────────────┘
-                         │
-                         ▼
-┌────────────────────────────────────────────┐
-│                RTL DESIGN (Verilog)        │
-│    • Partial Product Generation            │
-│    • Carry-Save Adder Structure            │
-└────────────────────────┬───────────────────┘
-                         │
-                         ▼
-┌────────────────────────────────────────────┐
-│          FUNCTIONAL VERIFICATION           │
-│    • Testbench Simulation (GTKWAVE)        │
-│    • Output Product Verification            │
-└────────────────────────┬───────────────────┘
-                         │
-                         ▼
-┌────────────────────────────────────────────┐
-│             LOGIC SYNTHESIS (Yosys)        │
-│    • Timing Optimization                   │
-│    • Area Estimation                        │
-└────────────────────────┬───────────────────┘
-                         │
-                         ▼
-┌────────────────────────────────────────────┐
-│          PHYSICAL DESIGN (OpenLane)        │
-│    • Floorplanning, Placement, Routing      │
-│    • Layout and Timing Closure              │
-└────────────────────────┬───────────────────┘
-                         │
-                         ▼
-┌────────────────────────────────────────────┐
-│        VERIFICATION & SIGNOFF              │
-│    • STA (Static Timing Analysis)          │
-│    • Power and Area Estimation             │
-└────────────────────────────────────────────┘
+<img width="321" height="593" alt="image" src="https://github.com/user-attachments/assets/33c96875-2377-4ac2-8dbd-fbe151aa9a5d" />
 
 
 📊 Results and Performance
-Parameter	Value	Unit / Description
-Technology Node	130 nm	SkyWater Open-Source PDK
-Total Area	1500	µm²
-Critical Path Delay	5.10	ns
-Maximum Frequency	190	MHz
-Total Power	1.15	mW
-Total Cell Count	~180	—
+<img width="886" height="382" alt="image" src="https://github.com/user-attachments/assets/bec95d0b-67d9-459b-9217-c8b692483601" />
 
 Performance Summary:
 The post-layout implementation achieved clean timing closure with a 5.10 ns critical path, operating reliably at 190 MHz. Power consumption remains minimal, making it efficient for small-scale arithmetic accelerators.
@@ -147,6 +103,52 @@ Balanced adder tree ensures uniform propagation across bit levels.
 Verilog simulation confirmed correctness for all input combinations (00–15 × 00–15).
 
 Layout achieved high density with efficient use of routing layers.
+Design Methodology
+
+The design of a 4-bit Carry Save Multiplier includes three main stages:
+
+Partial Product Generation: Each bit of the multiplier is ANDed with each bit of the multiplicand to generate partial products.
+
+Carry-Save Addition: The partial products are then added using a series of full adders that store the carry outputs separately.
+
+Final Summation: The stored carries and sums are combined using a ripple-carry adder to produce the final 8-bit product.
+
+Implementation
+
+The project was implemented using Verilog HDL in Xilinx Vivado.
+The structural design was simulated and synthesized for FPGA implementation. The design achieves optimized area, power, and delay performance suitable for real-time applications.
+
+#Results
+
+The simulation waveform confirms correct multiplication for all 4-bit input combinations. The layout and FPGA output validate the accuracy of the design.
+Below are the corresponding implementation results:
+
+Figure 1: Block Diagram of 4-bit Carry Save Multiplier
+
+Figure 2: Simulation Waveform
+
+Figure 3: Layout Design
+
+Figure 4: FPGA Implementation Output
+#Performance Analysis
+
+The 4-bit Carry Save Multiplier was synthesized and implemented on the Xilinx Artix-7 FPGA board using Vivado. The following parameters were analyzed — area utilization, timing delay, and power consumption.
+<img width="819" height="415" alt="image" src="https://github.com/user-attachments/assets/6f98df19-f219-4ad1-8376-9c671ab908c7" />
+
+Comparative Analysis
+
+To evaluate the efficiency of the Carry Save Multiplier, it was compared with conventional multiplier architectures such as Array Multiplier and Carry Lookahead Multiplier (CLA).
+
+<img width="936" height="247" alt="image" src="https://github.com/user-attachments/assets/1f56868b-7fd8-4b8c-8086-61e6a01acd99" />
+
+
+#Conclusion
+
+The 4-bit Carry Save Multiplier effectively demonstrates a faster and area-efficient multiplication technique using the carry-save approach. It can be extended to higher bit-width multipliers for VLSI and digital processor applications where high-speed arithmetic operations are critical.
+
+Future Scope
+
+The design can be expanded to support 8-bit or 16-bit multipliers. It can also be optimized for power consumption and integrated into ALUs, DSP processors, and cryptographic hardware.
 
 📚 References
 
@@ -157,3 +159,19 @@ SkyWater 130nm Open-Source PDK Documentation.
 OpenLane and Yosys User Manuals.
 
 FPGA Implementation Guide for Arithmetic Circuits.
+#Figure 1: Schematic Diagram
+The synthesized design was mapped onto an FPGA board using Vivado. Switches were
+assigned to inputs A[3:0] and B[3:0], and LEDs were connected to output P[7:0].
+
+![WhatsApp Image 2025-10-30 at 13 06 58_ce3f9c43](https://github.com/user-attachments/assets/6cbbac73-bfa5-4701-9db0-810dc160d4fe)
+
+Figure 1: RTL Schematic of the Multiplier Design
+Figure 2: Simulation Waveform
+
+![WhatsApp Image 2025-10-30 at 13 09 50_1bc1dca4](https://github.com/user-attachments/assets/3d46f834-b415-4b6e-9f7a-817069be67c7)
+
+#hardware
+
+![WhatsApp Image 2025-11-02 at 23 04 11_93eb470e](https://github.com/user-attachments/assets/3021c0c4-ff87-4fb6-af9d-84408ae3de3c)
+
+Figure 3: FPGA Implementation Output on Hardware
