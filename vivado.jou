@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Wed Nov  5 15:22:07 2025
+# Process ID         : 17160
+# Current directory  : C:/Users/sevya/OneDrive/Desktop/carry_save_multiplier
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent20980 C:\Users\sevya\OneDrive\Desktop\carry_save_multiplier\carrysave.xpr
+# Log file           : C:/Users/sevya/OneDrive/Desktop/carry_save_multiplier/vivado.log
+# Journal file       : C:/Users/sevya/OneDrive/Desktop/carry_save_multiplier\vivado.jou
+# Running On         : LAPTOP-7BLF4EH9
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i3-1215U
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 8
+# Host memory        : 8301 MB
+# Swap memory        : 5905 MB
+# Total Virtual      : 14206 MB
+# Available Virtual  : 4112 MB
+#-----------------------------------------------------------
+start_gui
