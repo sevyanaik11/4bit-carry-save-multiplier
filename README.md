@@ -346,3 +346,56 @@ The final post-synthesis results confirm that the design is well-suited for high
 # Conclusion
 
 The 4-bit Carry Save Multiplier effectively demonstrates a faster and area-efficient multiplication technique using the carry-save approach. It can be extended to higher bit-width multipliers for VLSI and digital processor applications where high-speed arithmetic operations are critical
+⚙️ Tools and Technologies
+Category	Tools / Technologies
+Hardware Description Language	Verilog HDL (IEEE 1364-2001 Standard)
+Simulation Tool	Xilinx Vivado 2023.1 / Cadence NCSim
+Logic Synthesis	Cadence Genus Synthesis Solution
+Place & Route	Cadence Innovus Implementation System
+Technology Node	90 nm CMOS Standard Cell Library
+Verification	Functional Simulation, Static Timing Analysis (STA)
+Reports & Debugging	Waveform Analysis, Power and Area Reports
+Hardware Testing	FPGA Implementation (Basys3 Board)
+GDS Export	Innovus Stream Out (GDSII Generation)
+🎓 Academic Context
+
+Course Information:
+
+Course: VLSI System Design Practice (EC-307)
+
+Faculty: Dr. P. Ranga Babu
+
+Department: Electronics and Communication Engineering
+
+Institution: Indian Institute of Information Technology Design and Manufacturing, Kurnool
+
+Academic Year: 2025–2026 (Semester 5)
+
+📬 Contact
+
+Email: sevya.naik@gmail.com
+, [add teammate’s mail if any]
+
+Institution: IIITDM Kurnool
+
+🌟 Acknowledgments
+
+This project was successfully completed under the valuable guidance and support of:
+
+Dr. P. Ranga Babu — Course Instructor & Project Guide, Department of ECE, IIITDM Kurnool
+
+IIITDM Kurnool — For providing laboratory access and computing infrastructure
+
+Cadence Design Systems — For access to EDA tools used in the design flow
+
+Open-Source and Research Community — For resources and literature support in multiplier design
+
+Peers and Faculty — For constant feedback during project development
+
+👨‍🎓 About the Developers
+
+Sevya Naik
+
+ranjith
+Department of Electronics and Communication Engineering
+Indian Institute of Information Technology Design and Manufacturing, Kurnool
