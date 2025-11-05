@@ -237,7 +237,8 @@ Observed trade-offs in area, delay, and power efficiency
 Successfully implemented and tested hardware output on FPGA
 
 Achieved a functional and optimized digital arithmetic design ✅
-📚 References & research
+
+# 📚 References & research
 
 J. M. Rabaey, Digital Integrated Circuits: A Design Perspective.
 
