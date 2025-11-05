@@ -124,6 +124,8 @@ The simulation waveform confirms correct multiplication for all 4-bit input comb
 Below are the corresponding implementation results:
 
  Block Diagram of 4-bit Carry Save Multiplier
+ <img width="1270" height="842" alt="Screenshot 2025-11-05 130641" src="https://github.com/user-attachments/assets/8681341d-8e4b-444d-b9a3-2bb02a8ea50e" />
+
  
 Figure 1;Schematic Diagram
 
@@ -132,7 +134,7 @@ Figure 2: Simulation Waveform
 Figure 3: Layout Design
 
 Figure 4: FPGA Implementation Output
-#Performance Analysis
+# Performance Analysis
 
 The 4-bit Carry Save Multiplier was synthesized and implemented on the Xilinx Artix-7 FPGA board using Vivado. The following parameters were analyzed — area utilization, timing delay, and power consumption.
 <img width="819" height="415" alt="image" src="https://github.com/user-attachments/assets/6f98df19-f219-4ad1-8376-9c671ab908c7" />
