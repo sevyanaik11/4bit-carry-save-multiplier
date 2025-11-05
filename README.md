@@ -373,7 +373,7 @@ Academic Year: 2025–2026 (Semester 5)
 
 📬 Contact
 
-Email: sevya.naik@gmail.com
+Email: rathodgopal9100@gmail.com
 , [add teammate’s mail if any]
 
 Institution: IIITDM Kurnool
