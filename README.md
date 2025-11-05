@@ -270,7 +270,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports {P[7]}]
 FPGA Implementation Guide for Arithmetic Circuits.
 
 
-#Figure 1: Schematic Diagram
+# Figure 1: Schematic Diagram
 The synthesized design was mapped onto an FPGA board using Vivado. Switches were
 assigned to inputs A[3:0] and B[3:0], and LEDs were connected to output P[7:0].
 
@@ -287,7 +287,7 @@ The schematic confirms that the design structure follows the modular approach wi
 
 
 
-Figure 2: Simulation Waveform
+# Figure 2: Simulation Waveform
 
 ![WhatsApp Image 2025-10-30 at 13 09 50_1bc1dca4](https://github.com/user-attachments/assets/3d46f834-b415-4b6e-9f7a-817069be67c7)
 Simulation Waveform
@@ -296,9 +296,9 @@ Simulation Waveform
 Inputs A and B (each 4-bit) are given, and the product P (8-bit) is observed at the output.
 For every change in input, the output corresponds exactly to the expected product value, confirming the correctness of the Verilog code.
 The waveform validates the parallel carry-save addition technique, showing reduced delay compared to conventional multiplication methods.
-#layout
+# layout
 ![WhatsApp Image 2025-10-30 at 13 07 53_081e27a6](https://github.com/user-attachments/assets/1a4d02bd-4495-4671-bede-2f27fdb9e6d2)
-#figure3;layout
+figure 3;layout
 The layout diagram represents the physical implementation of the multiplier circuit at the transistor or standard cell level.
 This layout is generated after synthesis, placement, and routing in the VLSI design flow.
 It shows the actual arrangement of gates, interconnections, and metal layers.
@@ -306,11 +306,11 @@ The design successfully passed DRC (Design Rule Check) and LVS (Layout vs. Schem
 The compact design and proper routing indicate optimized area utilization.
 
 
-#hardware
+# hardware
 
 ![WhatsApp Image 2025-11-02 at 23 04 11_93eb470e](https://github.com/user-attachments/assets/3021c0c4-ff87-4fb6-af9d-84408ae3de3c)
 
-Figure 3: FPGA Implementation Output on Hardware
+Figure 4: FPGA Implementation Output on Hardware
 #Hardware Implementation
 
 #The hardware implementation was carried out on an FPGA board.
@@ -320,7 +320,7 @@ When tested practically, the FPGA output matched the simulated results, confirmi
 This validates the design’s efficiency, accuracy, and suitability for high-speed arithmetic operations.
 Example Calculation
 
-#To verify the functionality of the Carry-Save Multiplier, the following example was tested:
+# To verify the functionality of the Carry-Save Multiplier, the following example was tested:
 
 Input	Binary Value	Decimal Value
 A	1010	10
@@ -330,10 +330,10 @@ Expected Output:
 Product = A × B = 10 × 5 = 50
 Binary Output = 0011 0010
 
-#Simulation Output:
+# Simulation Output:
 Observed Binary Output = 0011 0010 ✅
 Hence, the Carry-Save Multiplier provides the correct 8-bit product output, confirming the design’s accuracy.
-#Result Summary
+# Result Summary
 
 The Carry-Save Multiplier achieved a higher operating frequency with reduced delay due to the elimination of carry propagation at intermediate stages.
 
@@ -343,6 +343,6 @@ Power and area optimization were achieved while maintaining accurate multiplicat
 
 The final post-synthesis results confirm that the design is well-suited for high-speed arithmetic units in DSP and VLSI applications.
 
-#Conclusion
+# Conclusion
 
 The 4-bit Carry Save Multiplier effectively demonstrates a faster and area-efficient multiplication technique using the carry-save approach. It can be extended to higher bit-width multipliers for VLSI and digital processor applications where high-speed arithmetic operations are critical
