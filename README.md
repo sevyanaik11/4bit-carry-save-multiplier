@@ -192,7 +192,7 @@ module carry_save_multiplier_4bit (
 
 endmodule
 ```
-# verilog code for 4bit carry save multiplier(textbench)
+# verilog code for 4bit carry save multiplier(testbench)
 ```
 `timescale 1ns / 1ps
 module tb_carry_save_multiplier_4bit;
