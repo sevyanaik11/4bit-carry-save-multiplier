@@ -183,6 +183,15 @@ Simulation Waveform
 Inputs A and B (each 4-bit) are given, and the product P (8-bit) is observed at the output.
 For every change in input, the output corresponds exactly to the expected product value, confirming the correctness of the Verilog code.
 The waveform validates the parallel carry-save addition technique, showing reduced delay compared to conventional multiplication methods.
+#layout
+![WhatsApp Image 2025-10-30 at 13 07 53_081e27a6](https://github.com/user-attachments/assets/1a4d02bd-4495-4671-bede-2f27fdb9e6d2)
+#figure3;layout
+The layout diagram represents the physical implementation of the multiplier circuit at the transistor or standard cell level.
+This layout is generated after synthesis, placement, and routing in the VLSI design flow.
+It shows the actual arrangement of gates, interconnections, and metal layers.
+The design successfully passed DRC (Design Rule Check) and LVS (Layout vs. Schematic) verification, ensuring that the layout matches the schematic and follows fabrication rules.
+The compact design and proper routing indicate optimized area utilization.
+
 
 #hardware
 
