@@ -4,7 +4,7 @@ The 4-bit Carry Save Multiplier performs fast binary multiplication using carry-
 
 This project presents the FPGA-based implementation of a 4-bit Carry Save Multiplier (CSM) — a high-speed arithmetic unit that enhances multiplication performance using the carry-save addition technique. The design efficiently computes partial products and reduces propagation delay by storing intermediate carries instead of propagating them immediately. This project demonstrates the design, simulation, synthesis, and implementation of the CSM on an FPGA using Xilinx Vivado with switches as inputs and LEDs as output.
 
-✨ Key Highlights
+#✨ Key Highlights
 
 ⚡ High Speed: Reduced delay due to parallel carry-save addition
 
@@ -36,7 +36,7 @@ Align partial products based on bit significance
 Perform carry-save additions in stages
 
 Propagate final sum and carry to get the 8-bit result
-💡 Working Principle
+#💡 Working Principle
 
 The multiplier accepts two 4-bit binary inputs (A and B) and produces an 8-bit output (P). The process involves:
 
