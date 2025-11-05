@@ -146,13 +146,14 @@ Future Scope
 
 The design can be expanded to support 8-bit or 16-bit multipliers. It can also be optimized for power consumption and integrated into ALUs, DSP processors, and cryptographic hardware.
 
-📚 References
+📚 References & research
 
 J. M. Rabaey, Digital Integrated Circuits: A Design Perspective.
 
 SkyWater 130nm Open-Source PDK Documentation.
 
 OpenLane and Yosys User Manuals.
+https://coertvonk.com/hw/building-math-circuits/faster-parameterized-multiplier-in-verilog-30774
 
 FPGA Implementation Guide for Arithmetic Circuits.
 
