@@ -123,7 +123,7 @@ The structural design was simulated and synthesized for FPGA implementation. The
 The simulation waveform confirms correct multiplication for all 4-bit input combinations. The layout and FPGA output validate the accuracy of the design.
 Below are the corresponding implementation results:
 
- Block Diagram of 4-bit Carry Save Multiplier
+ # Block Diagram of 4-bit Carry Save Multiplier
  <img width="1270" height="842" alt="Screenshot 2025-11-05 130641" src="https://github.com/user-attachments/assets/8681341d-8e4b-444d-b9a3-2bb02a8ea50e" />
 
  
